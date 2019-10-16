@@ -82,11 +82,9 @@ class App extends Component {
     //console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
    return (
     <div className="container">
-      
       <Display>    
           {this.state.input === "" ? this.state.prevNum.toString() : this.state.input}
       </Display>
-
       <div className="keypad"> 
         <div className="BtnRow">
           <Button style={{backgroundColor: this.props.buttonColor, color: this.props.buttonFontColor}} click={() => this.getInput("1")}>1</Button>
