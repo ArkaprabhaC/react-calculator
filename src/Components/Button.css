@@ -1,0 +1,16 @@
+.btn{
+    border: 1px solid #000;
+    width:25%;
+    text-align:center;
+    padding:30px;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: grey;
+}
+.btn-showScientific{
+    width:100%;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: green;
+}

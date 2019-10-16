@@ -1,0 +1,9 @@
+.display{
+    background-color: #8c2b24;
+    border: 1px solid #000;
+  }
+.display h1{
+    color:#fff;
+    padding: 20px;
+    text-align: right;
+}
