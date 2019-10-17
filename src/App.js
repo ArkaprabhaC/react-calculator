@@ -75,7 +75,7 @@ class App extends Component {
     })
   }
   
-  flipInput = () => { this.setState({ input: -this.state.input });}
+  flipInput = () => { this.setState({ input: (-parseInt(this.state.input)).toString() });}
   computeSquare = () => { this.setState({prevNum: parseInt(this.state.input) * parseInt(this.state.input), input:"0"});}
   computeSqRoot = () => { this.setState({ prevNum: Math.sqrt(parseInt(this.state.input)), input: "0"});}
 
