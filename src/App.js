@@ -21,7 +21,13 @@ class App extends Component {
     }
   }
 
-  getInput = (a) => { if(this.state.input === "0"){this.setState({ input: a})}else{this.setState({ input: this.state.input+a})} }
+  getInput = (a) => { 
+    if(this.state.input === "0"){
+      this.setState({ input: a})
+    }else{
+      this.setState({ input: this.state.input+a})
+    } 
+  }
 
   doProcess = (op) => {
     let input1 = parseInt(this.state.input);
