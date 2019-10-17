@@ -10,33 +10,37 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state ={
-      input: "",
+      input: "0",
       prevNum: 0,
       prevOperand: "+",
       showScientific: false,
     }
+    this.btnStyle = {
+      backgroundColor: this.props.buttonColor,
+      color: this.props.buttonFontColor
+    }
   }
 
-  getInput = (a) => { this.setState({ input: this.state.input+a}) }
+  getInput = (a) => { if(this.state.input === "0"){this.setState({ input: a})}else{this.setState({ input: this.state.input+a})} }
 
   doProcess = (op) => {
     let input1 = parseInt(this.state.input);
 
     switch(this.state.prevOperand ){
       case "+":
-          this.setState({ prevNum: this.state.prevNum + input1 , input:""});
+          this.setState({ prevNum: this.state.prevNum + input1 , input:"0"});
           break;
       
       case "-":
-          this.setState({ prevNum: this.state.prevNum - input1 , input:""});
+          this.setState({ prevNum: this.state.prevNum - input1 , input:"0"});
           break;
 
       case "*":
-          this.setState({ prevNum: this.state.prevNum * input1 , input:""});
+          this.setState({ prevNum: this.state.prevNum * input1 , input:"0"});
           break;
 
       case "/":
-          this.setState({ prevNum: this.state.prevNum / input1 , input:""});
+          this.setState({ prevNum: this.state.prevNum / input1 , input:"0"});
           break;
 
       case "=":
@@ -52,7 +56,7 @@ class App extends Component {
 
   //Triggers when clear button is pressed
   doClearOp = () => {
-    this.setState({ prevNum: 0 , input:""});
+    this.setState({ prevNum: 0 , input:"0"});
   }
 
   /*
@@ -66,24 +70,25 @@ class App extends Component {
   }
   
   flipInput = () => { this.setState({ input: -this.state.input });}
-  computeSquare = () => { this.setState({prevNum: this.state.input * this.state.input, input:""});}
-  computeSqRoot = () => { this.setState({ prevNum: Math.sqrt(this.state.input), input: ""});}
+  computeSquare = () => { this.setState({prevNum: parseInt(this.state.input) * parseInt(this.state.input), input:"0"});}
+  computeSqRoot = () => { this.setState({ prevNum: Math.sqrt(parseInt(this.state.input)), input: "0"});}
 
 
   /*
   * FUNCTIONS FOR TASK 3!
   */
    componentDidUpdate(){
-     console.log("bg is "+this.props.backGroundColor)
+     //console.log("bg is "+this.props.backGroundColor)
      document.body.style.backgroundColor =  this.props.backGroundColor;
    }
 
   render(){
-    //console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
+    console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
+
    return (
     <div className="container">
       <Display>    
-          {this.state.input === "" ? this.state.prevNum.toString() : this.state.input}
+          {this.state.input === "0" ? this.state.prevNum.toString() : this.state.input}
       </Display>
       <div className="keypad"> 
         <div className="BtnRow">
