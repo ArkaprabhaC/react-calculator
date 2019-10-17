@@ -62,7 +62,7 @@ class App extends Component {
 
   //Triggers when clear button is pressed
   doClearOp = () => {
-    this.setState({ prevNum: 0 , input:"0"});
+    this.setState({ prevNum: 0 , input:"0", prevOperand: "+"});
   }
 
   /*
@@ -84,7 +84,7 @@ class App extends Component {
   * FUNCTIONS FOR TASK 3!
   */
    componentDidUpdate(){
-     //console.log("bg is "+this.props.backGroundColor)
+   //  console.log("bg is "+this.props.backGroundColor)
      document.body.style.backgroundColor =  this.props.backGroundColor;
    }
 
