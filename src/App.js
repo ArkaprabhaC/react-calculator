@@ -79,18 +79,15 @@ class App extends Component {
   computeSquare = () => { this.setState({prevNum: parseInt(this.state.input) * parseInt(this.state.input), input:"0"});}
   computeSqRoot = () => { this.setState({ prevNum: Math.sqrt(parseInt(this.state.input)), input: "0"});}
 
-
   /*
   * FUNCTIONS FOR TASK 3!
   */
    componentDidUpdate(){
-   //  console.log("bg is "+this.props.backGroundColor)
      document.body.style.backgroundColor =  this.props.backGroundColor;
    }
 
   render(){
     //console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
-
    return (
     <div className="container">
       <Display>    
