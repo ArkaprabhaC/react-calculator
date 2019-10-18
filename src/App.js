@@ -82,7 +82,7 @@ class App extends Component {
    }
 
   render(){
-    console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
+  //console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
    return (
     <div className="container">
       <Display>    
