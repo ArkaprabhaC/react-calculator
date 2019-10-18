@@ -15,10 +15,6 @@ class App extends Component {
       prevOperand: "+",
       showScientific: false,
     }
-    this.btnStyle = {
-      backgroundColor: this.props.buttonColor,
-      color: this.props.buttonFontColor
-    }
   }
 
   getInput = (a) => { 
@@ -30,8 +26,7 @@ class App extends Component {
   }
 
   doProcess = (op) => {
-    let input1 = parseInt(this.state.input);
-
+    const input1 = parseInt(this.state.input);
     switch(this.state.prevOperand ){
       case "+":
           this.setState({ prevNum: this.state.prevNum + input1 , input:"0"});
@@ -87,7 +82,7 @@ class App extends Component {
    }
 
   render(){
-    //console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
+    console.log("[DEBUG: RENDER] prevNum: "+this.state.prevNum+" and input: "+this.state.input);
    return (
     <div className="container">
       <Display>    
